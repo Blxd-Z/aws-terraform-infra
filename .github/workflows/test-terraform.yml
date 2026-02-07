@@ -34,7 +34,10 @@ jobs:
       - name: Clonar repositorio en Github actions
         uses: actions/checkout@v4
       - name: Desplegar infra en aws
-        run: terraform apply
+        run: |
+         cd terraform
+         terraform apply
+         
   
         
     
