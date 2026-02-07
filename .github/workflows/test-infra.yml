@@ -25,20 +25,6 @@ jobs:
        terraform validate
        terraform fmt
        terraform plan
-  CD:
-    needs: CI
-    if: github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Terraform install
-        uses: hashicorp/setup-terraform@v3 
-      - name: Clonar repositorio en Github actions
-        uses: actions/checkout@v4
-      - name: Desplegar infra en aws
-        run: |
-         cd terraform
-         terraform init
-         terraform apply -auto-approve
          
   
         
