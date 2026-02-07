@@ -2,8 +2,6 @@
 name: Destroy Infra
 
 on:
-  push:
-
   workflow_dispatch: #Permite hacerlo de forma manual, no automática.
   
 env:
