@@ -15,6 +15,12 @@ jobs:
         uses: hashicorp/setup-terraform@v3 
       - name: Clonar repositorio en Github actions
         uses: actions/checkout@v4
+      - name: Testear infra
+        run: |
+         cd terraform
+         terraform init
+         terraform validate
+         terraform plan
       - name: Desplegar infra en aws
         run: |
          cd terraform
