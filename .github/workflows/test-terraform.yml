@@ -36,6 +36,7 @@ jobs:
       - name: Desplegar infra en aws
         run: |
          cd terraform
+         terraform init
          terraform apply
          
   
