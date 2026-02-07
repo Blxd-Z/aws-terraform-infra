@@ -58,7 +58,6 @@ resource "aws_instance" "servidor_web" {
     instance_type = "t2.micro"
     subnet_id = aws_subnet.society.id
     vpc_security_group_ids = [aws_security_group.sg_allow_http.id]
-    key_name = aws_key_pair.parClaves.key_name
     user_data = <<EOF
 #!/bin/bash
 dnf update -y
@@ -71,5 +70,6 @@ EOF
         Name = "Servidor Nginx" #Nombre de la instancia EC2
     } 
 }
+
 
 
