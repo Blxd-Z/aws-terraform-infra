@@ -13,7 +13,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::151098958427:role/GithubActionsOIDC
-          aws-region: eu-east-1          
+          aws-region: us-east-1          
       - name: Clonar Repo en la MV
         uses: actions/checkout@v4
 
