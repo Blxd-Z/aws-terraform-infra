@@ -4,7 +4,11 @@ on:
   push:
       paths:
       - 'terraform/**'
-
+      
+permissions:
+  id-token: write
+  contents: read
+  
 jobs:
 
   CI:
