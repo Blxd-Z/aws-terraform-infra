@@ -61,7 +61,7 @@ resource "aws_security_group" "sg_allow_http" {
 }
 
 resource "aws_s3_bucket" "website" {
-  bucket = "website-portfolio-ilyasss"
+  bucket = "website-portfolio-ilyass"
   tags = {
     Name = "Backend for terraform"
   }
@@ -93,6 +93,7 @@ EOF
         Name = "Servidor Nginx" #Nombre de la instancia EC2
     } 
 }
+
 
 
 
