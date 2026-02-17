@@ -11,8 +11,8 @@ El despliegue de la infraestructura esta automatizado mediante GitHub Actions (C
 
 ## Tecnologias utilizadas
 
-    <li><a href="#roadmap">Terraform >= 1.14</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+<li><a href="#roadmap">Terraform >= 1.14</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#acknowledgments">Acknowledgments</a></li>
