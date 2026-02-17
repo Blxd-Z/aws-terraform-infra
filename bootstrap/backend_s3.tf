@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "tf_state" {
   bucket = "remote-tfstate-blx"
-  tags {
+  tags = {
     Name = "Backend for terraform"
   }
 }
