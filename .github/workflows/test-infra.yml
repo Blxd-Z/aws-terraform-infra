@@ -1,7 +1,5 @@
 name: Terraform CI
-env:
-  TF_VAR_my_ip: ${{  secrets.TF_VAR_my_ip  }}  
-  
+ 
 on:
   push:
       paths:
@@ -36,6 +34,8 @@ jobs:
        terraform validate
        terraform fmt
        terraform plan
+      env:
+        TF_VAR_my_ip: ${{  secrets.TF_VAR_my_ip  }}
          
   
         
