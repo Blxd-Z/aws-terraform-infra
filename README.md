@@ -11,8 +11,12 @@ El despliegue de la infraestructura esta automatizado mediante GitHub Actions (C
 
 ## Tecnologias utilizadas
 
-<li>Terraform >= 1.14</li>
-<li>AWS Provider ~> 6.28</li>
-<li>AWS (EC2, VPC, S3, CloudFront, IAM)</li>
-<li>GitHub Actions</li>
-<li>OIDC</li>
+* [](Terraform >= 1.14)
+* []()
+* []()
+
+
+AWS Provider ~> 6.28
+AWS (EC2, VPC, S3, CloudFront, IAM)
+GitHub Actions
+OIDC
