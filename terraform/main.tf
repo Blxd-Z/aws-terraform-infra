@@ -60,6 +60,22 @@ resource "aws_security_group" "sg_allow_http" {
     }
 }
 
+resource "aws_s3_bucket" "website" {
+  bucket = "website-portfolio-ilyass"
+  tags = {
+    Name = "Backend for terraform"
+  }
+}
+
+resource "aws_s3_object" "objects" { 
+  for_each = fileset("${path.module}/frontend/", "*")
+
+  bucket = aws_s3_bucket.website-portfolio-ilyass.id
+  key    = each.value
+  source = "${path.module}/frontend/${each.value}"
+  etag   = filemd5("${path.module}/frontend/${each.value}")
+}
+
 resource "aws_instance" "servidor_web" {
     ami = "ami-07ff62358b87c7116" #La imagen id es dependiendo de la region, cada region tiene sus ID's
     instance_type = "t2.micro"
@@ -77,6 +93,7 @@ EOF
         Name = "Servidor Nginx" #Nombre de la instancia EC2
     } 
 }
+
 
 
 
