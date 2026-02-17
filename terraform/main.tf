@@ -76,6 +76,14 @@ resource "aws_s3_object" "objects" {
   etag   = filemd5("${path.module}/../frontend/${each.value}")
 }
 
+resource "aws_s3_bucket_website_configuration" "hosting" {
+  bucket = aws_s3_bucket.website.id
+
+  index_document {
+    suffix = "index.html"
+  }
+}
+
 resource "aws_instance" "servidor_web" {
     ami = "ami-07ff62358b87c7116" #La imagen id es dependiendo de la region, cada region tiene sus ID's
     instance_type = "t2.micro"
@@ -93,6 +101,7 @@ EOF
         Name = "Servidor Nginx" #Nombre de la instancia EC2
     } 
 }
+
 
 
 
