@@ -72,6 +72,7 @@ resource "aws_s3_object" "index_html" {
   key    = "index.html"
   source = "../frontend/index.html"
   content_type = "text/html"
+  etag = filemd5("../frontend/index.html")
 }
 
 resource "aws_s3_object" "styles_css" {
@@ -176,6 +177,7 @@ EOF
         Name = "Servidor Nginx" #Nombre de la instancia EC2
     } 
 }
+
 
 
 
