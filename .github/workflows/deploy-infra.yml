@@ -7,7 +7,9 @@ permissions:
   id-token: write
   contents: read
   
-    
+env:
+  TF_VAR_my_ip: ${{  secrets.TF_VAR_my_ip  }}
+  
 jobs:
   CD:
     runs-on: ubuntu-latest
