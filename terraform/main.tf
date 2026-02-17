@@ -70,7 +70,7 @@ resource "aws_s3_bucket" "website" {
 resource "aws_s3_object" "objects" { 
   for_each = fileset("${path.module}/frontend/", "*")
 
-  bucket = aws_s3_bucket.website-portfolio-ilyass.id
+  bucket = aws_s3_bucket.website.id
   key    = each.value
   source = "${path.module}/frontend/${each.value}"
   etag   = filemd5("${path.module}/frontend/${each.value}")
@@ -93,6 +93,7 @@ EOF
         Name = "Servidor Nginx" #Nombre de la instancia EC2
     } 
 }
+
 
 
 
