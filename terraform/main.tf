@@ -89,13 +89,6 @@ resource "aws_s3_object" "app_js" {
   content_type = "application/javascript"
 } 
 
-resource "aws_s3_bucket_website_configuration" "hosting" {
-  bucket = aws_s3_bucket.website.id
-
-  index_document {
-    suffix = "index.html"
-  }
-}
 resource "aws_cloudfront_origin_access_control" "default" {
   name                              = "s3-portfolio-oac"
   origin_access_control_origin_type = "s3"
@@ -177,6 +170,7 @@ EOF
         Name = "Servidor Nginx" #Nombre de la instancia EC2
     } 
 }
+
 
 
 
