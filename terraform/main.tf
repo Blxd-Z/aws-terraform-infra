@@ -150,7 +150,6 @@ resource "aws_s3_bucket_policy" "cdn_policy" {
           Service = "cloudfront.amazonaws.com"
         }
         Action   = "s3:GetObject"
-        # Importante: El /* al final para que pueda leer todos los archivos
         Resource = "${aws_s3_bucket.website.arn}/*"
         Condition = {
           StringEquals = {
@@ -178,6 +177,7 @@ EOF
         Name = "Servidor Nginx" #Nombre de la instancia EC2
     } 
 }
+
 
 
 
